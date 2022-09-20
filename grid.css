@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px auto auto auto 100px;
+  grid-template-areas:
+    'header'
+    'main'
+    'empty'
+    'sidebar'
+    'footer';
+}
+/*
+ * For Tablets
+ */
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: auto auto;
+    grid-template-rows: 80px auto auto 100px;
+    grid-template-areas:
+      'header header'
+      'main main'
+      'empty sidebar'
+      'footer footer';
+  }
+}
+/*
+ * For Desktop
+ */
+@media (min-width: 992px) {
+  body {
+    grid-template-columns: auto 100px 240px;
+    grid-template-rows: 80px calc(100vh - 180px) 100px;
+    grid-template-areas:
+      'header header header'
+      'main empty sidebar'
+      'footer footer footer';
+  }
+}
+.align-center {
+  text-align: center;
+}
+header {
+  grid-area: header;
+  background-color: orange;
+}
+main {
+  grid-area: main;
+  background-color: blue;
+}
+div {
+  grid-area: empty;
+}
+aside {
+  grid-area: sidebar;
+  background-color: red;
+}
+footer {
+  grid-area: footer;
+  background-color: green;
+}
